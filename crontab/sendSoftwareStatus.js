@@ -17,7 +17,7 @@ const sendStatus = () => {
         // 软件信息
         softwareList: [{ 
             serviceName: '11',
-            softwareStatus: '0',
+            softwareStatus: '5243c8eb-30df-40d9-b65c-9cf592b7a361',
             cpuUse: getRandom(maxSize),
             romUse: getRandom(maxSize),
             ramUse: getRandom(maxSize)
@@ -28,6 +28,7 @@ const sendStatus = () => {
         msg: '22'
     };
     let data = JSON.stringify({...mockData});
+    console.log('Start request software data...')
     request({
         url: requestUrl,
         method: requestMethod,

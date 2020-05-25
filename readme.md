@@ -7,7 +7,7 @@ node bin/www  或者 npm run start
 #通过pm2启动并监听文件改动
 npm run pm2Start
 
-// pm2 start bin/www --watch (监听文件改动，文件修改 自动重启)
+// pm2 start www --watch (监听文件改动，文件修改 自动重启)
 
 #停止pm2启动的项目
 pm2 stop all  --- 停止所有应用
@@ -20,5 +20,5 @@ node sendHardwareStatus.js
 node sendSoftwareStatus.js
 
 
-#线上启动
-npm run build
+#线上环境启动
+npm run prod

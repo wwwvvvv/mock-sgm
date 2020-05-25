@@ -7,11 +7,13 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var strategyRouter = require('./routes/strategy');
+var commandRouter = require('./routes/command');
+var configRouter = require('./routes/config');
 var wsTest = require('./routes/ws-test');
 
 //crontab
-var softwareCrontab = require('./crontab/sendSoftwareStatus');
-var hardwareCrontab = require('./crontab/sendHardwareStatus');
+// var softwareCrontab = require('./crontab/sendSoftwareStatus');
+// var hardwareCrontab = require('./crontab/sendHardwareStatus');
 //crontab end
 
 var app = express();
@@ -29,7 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/strategy', strategyRouter);
+app.use('/command', commandRouter);
 app.use('/wsTest', wsTest);
+app.use('/config', configRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

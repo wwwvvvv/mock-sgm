@@ -40,13 +40,14 @@ const sendStatus = () => {
         signalIntensity: getRandom(maxSize),
         // 通用
         msgName: 'test',
-        equID: '12233',
+        equID: '222',
         optType: '20',
         msg: '22',
         time: Date.now()
     };
     // console.log('mockData -->', mockData);
     let data = JSON.stringify({...mockData});
+    console.log('Start request hardware data..., requestUrl is ' + requestUrl);
     request({
         url: requestUrl,
         // method: 'post',
@@ -57,6 +58,7 @@ const sendStatus = () => {
         body: data //post
         // params: {} // get
     }, function(error, response, body){
+        console.log('error', error);
         console.log("hardware_body", body);
     });
 };

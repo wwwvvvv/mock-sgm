@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=development node ./bin/www",
-    "pm2Start": "cross-env NODE_ENV=development pm2 start ./bin/www --watch",
-    "build": "cross-env NODE_ENV=production node ./bin/www"
+    "pm2Start": "cross-env NODE_ENV=development pm2 start www.json --watch",
+    "prod": "cross-env NODE_ENV=production node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
