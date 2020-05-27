@@ -10,6 +10,7 @@ var strategyRouter = require('./routes/strategy');
 var commandRouter = require('./routes/command');
 var configRouter = require('./routes/config');
 var wsTest = require('./routes/ws-test');
+var upgradeRouter = require('./routes/upgrade');
 
 //crontab
 // var softwareCrontab = require('./crontab/sendSoftwareStatus');
@@ -34,6 +35,7 @@ app.use('/strategy', strategyRouter);
 app.use('/command', commandRouter);
 app.use('/wsTest', wsTest);
 app.use('/config', configRouter);
+app.use('/update', upgradeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
